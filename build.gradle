@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+def version = "0.0.1"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+defaultTasks 'shadowJar'
+
+repositories {
+    jcenter()
+    mavenCentral()
+
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        // (Gradle 5.1+) Limit dependency namespaces
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+
+    maven {
+        url = 'https://repo.codemc.org/repository/maven-public'
+    }
+}
+
+dependencies {
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.14.4-R0.1-SNAPSHOT'
+    compile group: 'org.bstats', name: 'bstats-bukkit', version: '1.5'
+}
+
+artifacts {
+    archives shadowJar
+}
+
+shadowJar {
+    destinationDirectory = file("$rootDir/build")
+    archiveFileName = "RPG-Waypoints-${version}.jar"
+
+    dependencies {
+        include dependency('org.bstats:bstats-bukkit')
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+ext {
+    resourceTokens = [
+        'Version': version
+    ]
+}
+
+processResources {
+    filter org.apache.tools.ant.filters.ReplaceTokens, tokens: resourceTokens
+}

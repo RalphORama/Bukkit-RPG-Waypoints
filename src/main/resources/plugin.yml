@@ -1,0 +1,8 @@
+name: RPG-Waypoints
+main: sh.ralph.rpgwaypoints.RPGWaypoints
+version: '@Version@'
+author: 'RalphORama'
+description: 'Create and discover warps that act as fast travel points!'
+api-version: '1.14'
+
+# TODO: Add commands, permissions

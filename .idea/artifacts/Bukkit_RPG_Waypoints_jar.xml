@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Bukkit-RPG-Waypoints:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Bukkit_RPG_Waypoints_jar</output-path>
+    <root id="archive" name="Bukkit-RPG-Waypoints.jar">
+      <element id="module-output" name="Bukkit-RPG-Waypoints.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bstats/bstats-bukkit/1.5/f551b1553d15e9298125b28477c89cbb6de1949c/bstats-bukkit-1.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
