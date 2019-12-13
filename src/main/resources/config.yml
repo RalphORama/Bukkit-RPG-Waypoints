@@ -1,0 +1,33 @@
+economy:
+  enabled: false
+  prices:
+    create: 10000
+    # How much it costs to delete a waypoint
+    remove: 0
+    # How much money is given to the user when they delete their waypoint.
+    refund: 500
+    use-default: 250
+    player-prices:
+      enabled: false
+      min: 0
+      max: 1000
+      # Can be 'owner', 'server', or a UUID
+      pays: 'owner'
+
+paginate-list: true
+tp-cooldown: 5000
+max-waypoints: 3
+
+database:
+  # Options: sqlite, mysql
+  type: sqlite
+  address: 127.0.0.1
+  port: 3306
+  username: root
+  password: root
+  database: minecraft
+  table_prefix: waypoints_
+
+lang:
+  header: 'header'
+  waypoint: 'waypoint'
